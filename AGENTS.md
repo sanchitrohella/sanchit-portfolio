@@ -1,0 +1,22 @@
+# Project Instructions
+
+- This is Sanchit Kumar's professional portfolio website.
+- Use React with JavaScript and Vite.
+- Use SCSS for styling.
+- Do not introduce TypeScript.
+- Do not add Redux.
+- Do not add React Router unless explicitly requested.
+- Do not add a backend.
+- Do not install a dependency without first explaining why it is needed.
+- Use reusable React components.
+- Store portfolio content in structured local JavaScript data files.
+- Keep components simple and readable.
+- Add useful comments only where the logic is not obvious.
+- Use semantic HTML.
+- Follow accessibility best practices.
+- Respect `prefers-reduced-motion`.
+- Prioritize Google Chrome and support current Edge, Firefox, and Safari.
+- Do not invent experience, achievements, statistics, URLs, or project metrics.
+- Do not expose confidential client information.
+- Run `npm run lint` and `npm run build` after meaningful changes.
+- Do not modify unrelated files.
