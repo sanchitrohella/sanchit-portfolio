@@ -1,0 +1,76 @@
+@use 'abstracts/variables' as *;
+
+:root {
+  color-scheme: light;
+
+  --color-background: #ffffff;
+  --color-surface: #f6f7f9;
+  --color-text: #424957;
+  --color-text-strong: #121722;
+  --color-border: #d9dde5;
+  --color-accent: #3157d5;
+  --color-focus: #1d4ed8;
+
+  --font-family-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  --font-size-body: 1rem;
+  --font-weight-semibold: 600;
+  --line-height-body: 1.6;
+  --line-height-heading: 1.15;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  --page-gutter: var(--space-4);
+  --container-max-width: #{$container-max-width};
+  --section-spacing: clamp(var(--space-16), 10vw, var(--space-24));
+
+  --radius-small: 0.375rem;
+  --radius-medium: 0.75rem;
+  --shadow-soft: 0 1rem 3rem rgb(18 23 34 / 8%);
+  --transition-duration: 200ms;
+  --transition-easing: ease;
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-background);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+:focus-visible {
+  outline: 0.1875rem solid var(--color-focus);
+  outline-offset: 0.1875rem;
+}
+
+::selection {
+  color: var(--color-background);
+  background-color: var(--color-text-strong);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

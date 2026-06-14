@@ -1,11 +1,5 @@
-import "./App.css";
-
 function App() {
-  return (
-    <>
-      <h1 className="text-3xl font-bold underline">Helloworld!</h1>
-    </>
-  );
+  return <main id="main-content">Hello World</main>;
 }
 
 export default App;
