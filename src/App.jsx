@@ -3,6 +3,7 @@ import Hero from "./sections/Hero/Hero";
 import ProfessionalHighlights from "./sections/ProfessionalHighlights/ProfessionalHighlights";
 import FeaturedProfessionalWork from "./sections/FeaturedProfessionalWork/FeaturedProfessionalWork";
 import FitMitraSpotlight from "./sections/FitMitraSpotlight/FitMitraSpotlight";
+import ProfessionalExperience from "./sections/ProfessionalExperience/ProfessionalExperience";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <ProfessionalHighlights />
         <FeaturedProfessionalWork />
         <FitMitraSpotlight />
+        <ProfessionalExperience />
       </main>
     </>
   );

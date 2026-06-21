@@ -1,0 +1,122 @@
+@use '../../styles/abstracts/mixins' as *;
+
+.professional-experience {
+  padding-block: 0 var(--section-spacing);
+  background: linear-gradient(
+    to bottom,
+    #0c111d 0,
+    #0c111d 4rem,
+    var(--color-surface) 4rem,
+    var(--color-surface) 100%
+  );
+
+  &__panel {
+    position: relative;
+    padding: var(--space-8) var(--space-4);
+    border: 1px solid rgb(255 255 255 / 42%);
+    border-radius: 1.25rem;
+    background-color: rgb(255 255 255 / 97%);
+    box-shadow: 0 2rem 5rem rgb(10 14 24 / 13%);
+  }
+
+  &__intro {
+    max-width: 50rem;
+    margin-bottom: var(--space-12);
+
+    > p:first-child {
+      margin-bottom: var(--space-3);
+      color: var(--color-accent);
+      font-size: 0.75rem;
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: var(--space-4);
+      font-size: clamp(2rem, 6vw, 3.75rem);
+      letter-spacing: -0.055em;
+    }
+
+    > p:last-child {
+      font-size: clamp(1rem, 2vw, 1.125rem);
+    }
+  }
+
+  &__timeline {
+    position: relative;
+    display: grid;
+    gap: var(--space-8);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &::before {
+      position: absolute;
+      top: var(--space-8);
+      bottom: var(--space-8);
+      left: var(--space-1);
+      width: 1px;
+      content: '';
+      background: linear-gradient(to bottom, var(--color-accent), var(--color-border));
+    }
+  }
+
+  &__earlier-career {
+    display: grid;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+    padding: var(--space-6);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    background:
+      linear-gradient(135deg, rgb(49 87 213 / 4%), transparent 45%),
+      var(--color-surface);
+
+    > div:nth-child(2) > p {
+      margin-bottom: var(--space-1);
+      color: var(--color-accent);
+      font-size: 0.75rem;
+      font-weight: var(--font-weight-semibold);
+    }
+
+    h3 {
+      margin-bottom: var(--space-1);
+      font-size: 1.25rem;
+    }
+
+    span,
+    > p:last-child {
+      font-size: 0.875rem;
+    }
+  }
+
+  &__transition-label {
+    color: var(--color-text);
+    font-size: 0.6875rem;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  @include respond-to(tablet) {
+    &__panel {
+      padding: var(--space-12);
+    }
+
+    &__timeline {
+      gap: var(--space-12);
+
+      &::before {
+        left: 0;
+      }
+    }
+
+    &__earlier-career {
+      grid-template-columns: 0.55fr 0.8fr 1.65fr;
+      align-items: center;
+      margin-left: var(--space-12);
+      padding: var(--space-6) var(--space-8);
+    }
+  }
+}
