@@ -1,0 +1,55 @@
+@use '../../styles/abstracts/mixins' as *;
+
+.professional-highlight {
+  position: relative;
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background-color: var(--color-background);
+
+  &__indicator {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+    color: var(--color-accent);
+    font-size: 0.6875rem;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.12em;
+
+    &::after {
+      width: 2rem;
+      height: 1px;
+      content: '';
+      background: linear-gradient(90deg, var(--color-accent), #7655e8);
+    }
+  }
+
+  h3 {
+    margin-bottom: var(--space-3);
+    font-size: 1.125rem;
+    letter-spacing: -0.025em;
+  }
+
+  p {
+    color: var(--color-text);
+    font-size: 0.9375rem;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    transition:
+      transform var(--transition-duration) var(--transition-easing),
+      border-color var(--transition-duration) var(--transition-easing),
+      box-shadow var(--transition-duration) var(--transition-easing);
+
+    &:hover {
+      border-color: rgb(49 87 213 / 28%);
+      box-shadow: var(--shadow-soft);
+      transform: translateY(-0.25rem);
+    }
+  }
+
+  @include respond-to(tablet) {
+    padding: var(--space-6);
+  }
+}

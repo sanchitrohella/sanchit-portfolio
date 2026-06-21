@@ -1,0 +1,63 @@
+@use '../../styles/abstracts/mixins' as *;
+
+.professional-highlights {
+  padding-block: 0 var(--section-spacing);
+  background:
+    radial-gradient(circle at 85% 55%, rgb(10 14 24 / 4%), transparent 28rem),
+    linear-gradient(
+      to bottom,
+      #0a0e18 0,
+      #0a0e18 4rem,
+      var(--color-surface) 4rem,
+      var(--color-surface) 100%
+    );
+
+  &__panel {
+    position: relative;
+    z-index: 1;
+    padding: var(--space-8) var(--space-4);
+    border: 1px solid rgb(255 255 255 / 42%);
+    border-radius: 1.25rem;
+    background: linear-gradient(145deg, #ffffff, #fbfbfc);
+    box-shadow: 0 2rem 5rem rgb(10 14 24 / 14%);
+  }
+
+  &__header {
+    margin-bottom: var(--space-6);
+
+    p {
+      margin-bottom: var(--space-2);
+      color: var(--color-accent);
+      font-size: 0.75rem;
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 5vw, 2.75rem);
+      letter-spacing: -0.045em;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  @include respond-to(tablet) {
+    &__panel {
+      padding: var(--space-8);
+    }
+
+    &__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @include respond-to(desktop) {
+    &__grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+}
