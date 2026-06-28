@@ -1,0 +1,78 @@
+@use "../../styles/abstracts/mixins" as *;
+
+.technical-skills {
+  position: relative;
+  overflow: hidden;
+  margin-top: calc(var(--section-spacing) * -0.4);
+  padding-block: calc(var(--section-spacing) * 0.25) var(--section-spacing);
+  background: linear-gradient(180deg, var(--color-surface) 0%, #f7f9ff 100%);
+
+  &::before {
+    position: absolute;
+    top: 5rem;
+    right: -8rem;
+    width: 22rem;
+    aspect-ratio: 1;
+    content: "";
+    border-radius: 50%;
+    background: radial-gradient(circle, rgb(49 87 213 / 10%), transparent 68%);
+    pointer-events: none;
+  }
+
+  .container {
+    position: relative;
+    width: min(100% - 2.25rem, var(--container-max-width));
+  }
+
+  &__intro {
+    max-width: 48rem;
+    margin-bottom: var(--space-8);
+
+    > p:first-child {
+      margin-bottom: var(--space-3);
+      color: var(--color-accent);
+      font-size: 0.75rem;
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: var(--space-4);
+      font-size: clamp(2.25rem, 6vw, 4rem);
+      letter-spacing: -0.055em;
+    }
+
+    > p:last-child {
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      line-height: 1.7;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    align-items: stretch;
+    gap: var(--space-5);
+  }
+
+  @include respond-to(tablet) {
+    .container {
+      width: min(100% - (var(--page-gutter) * 2), var(--container-max-width));
+    }
+
+    &__intro {
+      margin-bottom: calc(var(--space-8) + var(--space-2));
+    }
+
+    &__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-6);
+    }
+  }
+
+  @include respond-to(desktop) {
+    &__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}
