@@ -7,6 +7,7 @@ import ProfessionalExperience from "./sections/ProfessionalExperience/Profession
 import TechnicalSkills from "./sections/TechnicalSkills/TechnicalSkills";
 import PersonalProjects from "./sections/PersonalProjects/PersonalProjects";
 import Services from "./sections/Services/Services";
+import Contact from "./sections/Contact/Contact";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <TechnicalSkills />
         <PersonalProjects />
         <Services />
+        <Contact />
       </main>
     </>
   );
