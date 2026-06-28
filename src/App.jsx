@@ -6,6 +6,7 @@ import FitMitraSpotlight from "./sections/FitMitraSpotlight/FitMitraSpotlight";
 import ProfessionalExperience from "./sections/ProfessionalExperience/ProfessionalExperience";
 import TechnicalSkills from "./sections/TechnicalSkills/TechnicalSkills";
 import PersonalProjects from "./sections/PersonalProjects/PersonalProjects";
+import Services from "./sections/Services/Services";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <ProfessionalExperience />
         <TechnicalSkills />
         <PersonalProjects />
+        <Services />
       </main>
     </>
   );
