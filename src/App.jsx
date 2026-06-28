@@ -5,6 +5,7 @@ import FeaturedProfessionalWork from "./sections/FeaturedProfessionalWork/Featur
 import FitMitraSpotlight from "./sections/FitMitraSpotlight/FitMitraSpotlight";
 import ProfessionalExperience from "./sections/ProfessionalExperience/ProfessionalExperience";
 import TechnicalSkills from "./sections/TechnicalSkills/TechnicalSkills";
+import PersonalProjects from "./sections/PersonalProjects/PersonalProjects";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <FitMitraSpotlight />
         <ProfessionalExperience />
         <TechnicalSkills />
+        <PersonalProjects />
       </main>
     </>
   );

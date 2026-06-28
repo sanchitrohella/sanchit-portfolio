@@ -1,0 +1,65 @@
+@use '../../styles/abstracts/mixins' as *;
+
+.personal-projects {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 8%, rgb(49 87 213 / 7%), transparent 28rem),
+    linear-gradient(180deg, #f7f9ff 0%, var(--color-surface) 100%);
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background-image:
+      linear-gradient(rgb(18 23 34 / 3%) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(18 23 34 / 3%) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+    mask-image: linear-gradient(to bottom, black, transparent 70%);
+    pointer-events: none;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  &__header {
+    max-width: 50rem;
+    margin-bottom: calc(var(--space-8) + var(--space-2));
+
+    > p:first-child {
+      margin-bottom: var(--space-3);
+      color: var(--color-accent);
+      font-size: 0.75rem;
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: var(--space-4);
+      font-size: clamp(2.25rem, 6vw, 4rem);
+      letter-spacing: -0.055em;
+    }
+
+    > p:last-child {
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      line-height: 1.7;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: var(--space-6);
+  }
+
+  @include respond-to(tablet) {
+    &__header {
+      margin-bottom: var(--space-12);
+    }
+
+    &__grid {
+      gap: var(--space-8);
+    }
+  }
+}
