@@ -8,6 +8,11 @@ const resumeUrl = "/documents/Sanchit_Kumar_ATS_Resume_Updated.pdf";
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(() =>
+    typeof window === "undefined"
+      ? false
+      : window.matchMedia("(min-width: 64rem)").matches,
+  );
   const menuButtonRef = useRef(null);
   const navigationRef = useRef(null);
   const firstLinkRef = useRef(null);
@@ -23,15 +28,17 @@ function Header() {
 
   useEffect(() => {
     const desktopQuery = window.matchMedia("(min-width: 64rem)");
-    const closeMenuOnDesktop = (event) => {
+    const updateNavigationMode = (event) => {
+      setIsDesktop(event.matches);
       if (event.matches) {
         setIsMenuOpen(false);
       }
     };
 
-    desktopQuery.addEventListener("change", closeMenuOnDesktop);
+    desktopQuery.addEventListener("change", updateNavigationMode);
 
-    return () => desktopQuery.removeEventListener("change", closeMenuOnDesktop);
+    return () =>
+      desktopQuery.removeEventListener("change", updateNavigationMode);
   }, []);
 
   useEffect(() => {
@@ -40,7 +47,9 @@ function Header() {
     }
 
     const previousOverflow = document.body.style.overflow;
+    const previousRootOverflow = document.documentElement.style.overflow;
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
     firstLinkRef.current?.focus();
 
     const handleMenuKeydown = (event) => {
@@ -79,11 +88,13 @@ function Header() {
 
     return () => {
       document.body.style.overflow = previousOverflow;
+      document.documentElement.style.overflow = previousRootOverflow;
       document.removeEventListener("keydown", handleMenuKeydown);
     };
   }, [isMenuOpen]);
 
   const closeMenu = () => setIsMenuOpen(false);
+  const isNavigationVisible = isDesktop || isMenuOpen;
   const headerClasses = ["header", isScrolled && "header--scrolled"]
     .filter(Boolean)
     .join(" ");
@@ -121,6 +132,8 @@ function Header() {
           className={`header__navigation-wrap ${
             isMenuOpen ? "header__navigation-wrap--open" : ""
           }`}
+          aria-hidden={!isNavigationVisible}
+          inert={isNavigationVisible ? undefined : ""}
         >
           <nav
             id="primary-navigation"
