@@ -119,7 +119,7 @@
     }
   }
 
-  @media (hover: hover) and (pointer: fine) {
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
     &__card {
       transition:
         border-color var(--transition-duration) var(--transition-easing),

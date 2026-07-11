@@ -27,18 +27,23 @@ function Footer() {
           </ul>
         </nav>
 
-        <div className="footer__social">
+        <nav className="footer__social" aria-label="Social profiles">
           <h2>Social links</h2>
           <ul>
             {socialLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} target="_blank" rel="noreferrer">
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${link.label} profile, opens in a new tab`}
+                >
                   {link.label}
                 </a>
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
 
         <div className="footer__bottom">
           <p>&copy; {currentYear} Sanchit Kumar. All rights reserved.</p>

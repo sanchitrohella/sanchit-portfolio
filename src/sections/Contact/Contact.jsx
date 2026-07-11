@@ -62,19 +62,20 @@ function Contact() {
             className="contact__copy"
             type="button"
             onClick={copyEmail}
+            aria-label="Copy email address to clipboard"
             aria-describedby="copy-email-status"
           >
             Copy Email
           </button>
-          {copyStatus && (
-            <p
-              className="contact__copy-status"
-              id="copy-email-status"
-              aria-live="polite"
-            >
-              {copyStatus}
-            </p>
-          )}
+          <p
+            className="contact__copy-status"
+            id="copy-email-status"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            {copyStatus}
+          </p>
         </div>
 
         <div className="contact__actions" aria-label="Contact actions">
@@ -90,7 +91,8 @@ function Contact() {
               href={link.href}
               key={link.href}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              aria-label={`${link.label}, opens in a new tab`}
             >
               {link.label}
             </a>
@@ -98,6 +100,7 @@ function Contact() {
           <a
             className="contact__button contact__button--resume"
             href={contact.resumeUrl}
+            aria-label="Download Sanchit Kumar resume PDF"
             download
           >
             Download Resume

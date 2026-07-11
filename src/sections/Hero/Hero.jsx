@@ -34,7 +34,12 @@ function Hero() {
           <a className="hero-section__button hero-section__button--primary" href="#projects">
             View My Work
           </a>
-          <a className="hero-section__button" href={resumeUrl} download>
+          <a
+            className="hero-section__button"
+            href={resumeUrl}
+            aria-label="Download Sanchit Kumar resume PDF"
+            download
+          >
             Download Resume
           </a>
         </div>
@@ -42,7 +47,12 @@ function Hero() {
         <ul className="hero-section__socials" aria-label="Social profiles">
           {socialLinks.map(({ label, href }) => (
             <li key={label}>
-              <a href={href} target="_blank" rel="noreferrer">
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${label} profile, opens in a new tab`}
+              >
                 {label}
                 <span aria-hidden="true">↗</span>
               </a>

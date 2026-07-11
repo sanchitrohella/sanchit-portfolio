@@ -59,7 +59,8 @@ function PersonalProjectCard({ project }) {
                 key={link.href}
                 href={link.href}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                aria-label={`${link.label} for ${name}, opens in a new tab`}
               >
                 {link.label}
               </a>

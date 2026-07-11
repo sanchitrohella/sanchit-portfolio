@@ -45,8 +45,10 @@ function Header() {
 
     const handleMenuKeydown = (event) => {
       if (event.key === "Escape") {
+        event.preventDefault();
         setIsMenuOpen(false);
         menuButtonRef.current?.focus();
+        return;
       }
 
       if (event.key !== "Tab") {
@@ -55,8 +57,12 @@ function Header() {
 
       const focusableElements = [
         menuButtonRef.current,
-        ...navigationRef.current.querySelectorAll("a[href]"),
-      ];
+        ...(navigationRef.current?.querySelectorAll("a[href]") ?? []),
+      ].filter(Boolean);
+      if (focusableElements.length === 0) {
+        return;
+      }
+
       const firstElement = focusableElements[0];
       const lastElement = focusableElements.at(-1);
 
@@ -89,6 +95,7 @@ function Header() {
           className="header__brand"
           href="#home"
           aria-label="Sanchit Kumar, home"
+          onClick={closeMenu}
         >
           <span aria-hidden="true">SK</span>
           <span>Sanchit Kumar</span>
@@ -138,6 +145,7 @@ function Header() {
             <a
               className="header__resume"
               href={resumeUrl}
+              aria-label="Download Sanchit Kumar resume PDF"
               download
               onClick={closeMenu}
             >

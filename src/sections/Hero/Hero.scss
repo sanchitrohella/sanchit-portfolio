@@ -360,6 +360,13 @@
     }
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    &__button:hover,
+    &__visual:hover &__window {
+      transform: none;
+    }
+  }
+
   @include respond-to(desktop) {
     .container {
       grid-template-columns: minmax(0, 1.15fr) minmax(22rem, 0.85fr);
