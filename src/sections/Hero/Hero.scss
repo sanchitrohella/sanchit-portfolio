@@ -1,4 +1,4 @@
-@use '../../styles/abstracts/mixins' as *;
+@use "../../styles/abstracts/mixins" as *;
 
 .hero-section {
   position: relative;
@@ -16,7 +16,7 @@
   &::before {
     position: absolute;
     inset: 0;
-    content: '';
+    content: "";
     background-image:
       linear-gradient(rgb(255 255 255 / 3%) 1px, transparent 1px),
       linear-gradient(90deg, rgb(255 255 255 / 3%) 1px, transparent 1px);
@@ -241,13 +241,21 @@
       width: 76%;
       height: 0.375rem;
       border-radius: 999px;
-      background: linear-gradient(90deg, #8098ff 18%, rgb(255 255 255 / 10%) 18%);
+      background: linear-gradient(
+        90deg,
+        #8098ff 18%,
+        rgb(255 255 255 / 10%) 18%
+      );
 
       &:nth-child(2),
       &:nth-child(4) {
         width: 58%;
         margin-left: var(--space-6);
-        background: linear-gradient(90deg, #9c72ff 24%, rgb(255 255 255 / 8%) 24%);
+        background: linear-gradient(
+          90deg,
+          #9c72ff 24%,
+          rgb(255 255 255 / 8%) 24%
+        );
       }
 
       &:nth-child(3) {

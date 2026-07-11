@@ -1,0 +1,181 @@
+@use '../../styles/abstracts/mixins' as *;
+
+.about {
+  padding-block: clamp(2.5rem, 5vw, 3.5rem) var(--section-spacing);
+  background:
+    radial-gradient(circle at 90% 12%, rgb(49 87 213 / 6%), transparent 26rem),
+    linear-gradient(180deg, var(--color-surface) 0%, #ffffff 100%);
+
+  &__layout {
+    position: relative;
+    display: grid;
+    gap: var(--space-8);
+    overflow: hidden;
+    padding: var(--space-6);
+    border: 1px solid rgb(18 23 34 / 8%);
+    border-radius: 1.25rem;
+    background:
+      linear-gradient(145deg, rgb(255 255 255 / 96%), rgb(246 247 249 / 78%)),
+      #ffffff;
+    box-shadow: 0 1.5rem 4rem rgb(18 23 34 / 8%);
+
+    &::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 0.1875rem;
+      content: '';
+      background: linear-gradient(to bottom, #3157d5, #5c56a8, transparent 88%);
+    }
+  }
+
+  &__content {
+    position: relative;
+    max-width: 42rem;
+
+    h2 {
+      margin-bottom: var(--space-4);
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      letter-spacing: -0.055em;
+    }
+
+    > p {
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      line-height: 1.75;
+    }
+  }
+
+  &__eyebrow {
+    margin-bottom: var(--space-3);
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  &__focus {
+    margin-top: var(--space-6);
+    padding-left: var(--space-4);
+    border-left: 1px solid rgb(49 87 213 / 18%);
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.7;
+  }
+
+  &__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-6);
+    padding: 0;
+    list-style: none;
+
+    li {
+      padding: var(--space-2) var(--space-3);
+      border: 1px solid rgb(18 23 34 / 10%);
+      border-radius: 999px;
+      color: var(--color-text);
+      background-color: rgb(255 255 255 / 68%);
+      font-size: 0.75rem;
+      font-weight: var(--font-weight-semibold);
+    }
+  }
+
+  &__insights {
+    position: relative;
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  &__insight {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: var(--space-4);
+    padding: var(--space-5);
+    overflow: hidden;
+    border: 1px solid rgb(18 23 34 / 8%);
+    border-radius: var(--radius-medium);
+    background:
+      linear-gradient(135deg, rgb(255 255 255 / 92%), rgb(247 249 255 / 78%)),
+      #ffffff;
+    box-shadow: 0 1rem 2.5rem rgb(18 23 34 / 6%);
+
+    &::after {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 0.125rem;
+      content: '';
+      background: linear-gradient(to bottom, #3157d5, #5c56a8);
+      opacity: 0.7;
+    }
+
+    h3 {
+      margin-bottom: var(--space-2);
+      font-size: 1.05rem;
+      letter-spacing: -0.025em;
+    }
+
+    p {
+      font-size: 0.9375rem;
+      line-height: 1.65;
+    }
+  }
+
+  &__insight-number {
+    color: rgb(49 87 213 / 64%);
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.12em;
+  }
+
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    &__insight {
+      transition:
+        border-color var(--transition-duration) var(--transition-easing),
+        box-shadow var(--transition-duration) var(--transition-easing),
+        transform var(--transition-duration) var(--transition-easing);
+
+      &:hover {
+        border-color: rgb(49 87 213 / 24%);
+        box-shadow: var(--shadow-soft);
+        transform: translateY(-0.25rem);
+      }
+    }
+  }
+
+  @include respond-to(tablet) {
+    &__layout {
+      padding: var(--space-8);
+    }
+  }
+
+  @include respond-to(desktop) {
+    &__layout {
+      grid-template-columns: minmax(0, 0.95fr) minmax(25rem, 0.85fr);
+      align-items: center;
+      padding: var(--space-12);
+    }
+
+    &__insight:nth-child(2) {
+      margin-left: var(--space-5);
+    }
+  }
+
+  @media (max-width: 47.9375rem) {
+    &__layout {
+      gap: calc(var(--space-6) + var(--space-2));
+    }
+
+    &__focus {
+      margin-top: calc(var(--space-6) + var(--space-2));
+    }
+
+    &__chips {
+      margin-top: var(--space-5);
+    }
+  }
+}
