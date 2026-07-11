@@ -19,7 +19,14 @@ function PersonalProjectCard({ project }) {
       aria-labelledby={`${id}-title`}
     >
       <figure className="personal-project-card__media">
-        <img src={screenshot.src} alt={screenshot.alt} loading="lazy" />
+        <img
+          src={screenshot.src}
+          alt={screenshot.alt}
+          width={screenshot.width}
+          height={screenshot.height}
+          loading="lazy"
+          decoding="async"
+        />
       </figure>
 
       <div className="personal-project-card__content">

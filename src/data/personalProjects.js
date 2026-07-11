@@ -34,6 +34,8 @@ export const personalProjects = [
     screenshot: {
       src: devTinderScreenshot,
       alt: "DevTinder project screenshot showing a profile card interface.",
+      width: 1200,
+      height: 555,
     },
   },
   {
@@ -60,6 +62,8 @@ export const personalProjects = [
     screenshot: {
       src: foodOrderingScreenshot,
       alt: "Food Ordering App project screenshot showing a meal listing interface.",
+      width: 1200,
+      height: 555,
     },
   },
   {
@@ -86,6 +90,8 @@ export const personalProjects = [
     screenshot: {
       src: natoursScreenshot,
       alt: "Natours project screenshot showing a responsive landing page hero.",
+      width: 1200,
+      height: 556,
     },
   },
 ];
