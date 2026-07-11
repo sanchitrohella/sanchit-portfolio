@@ -191,6 +191,21 @@
     }
   }
 
+  @media (max-width: 47.9375rem) {
+    &__panel {
+      gap: var(--space-6);
+      padding: var(--space-5);
+    }
+
+    &__details {
+      padding: var(--space-5);
+    }
+
+    &__button {
+      padding-inline: var(--space-4);
+    }
+  }
+
   @include respond-to(desktop) {
     &__panel {
       grid-template-columns: minmax(0, 1.1fr) minmax(24rem, 0.9fr);

@@ -418,6 +418,27 @@
     }
   }
 
+  @media (max-width: 47.9375rem) {
+    .container {
+      gap: var(--space-12);
+    }
+
+    &__dashboard-body {
+      min-height: clamp(18rem, 82vw, 24rem);
+    }
+
+    &__dashboard-content {
+      padding: var(--space-3);
+    }
+
+    &__profile-card,
+    &__progress-card,
+    &__plan-card,
+    &__nutrition-card {
+      padding: var(--space-3);
+    }
+  }
+
   @include respond-to(desktop) {
     .container {
       width: min(100% - (var(--page-gutter) * 2), 82rem);

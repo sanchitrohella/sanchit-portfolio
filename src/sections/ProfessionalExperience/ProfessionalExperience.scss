@@ -113,10 +113,24 @@
     }
 
     &__earlier-career {
-      grid-template-columns: 0.55fr 0.8fr 1.65fr;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
       align-items: center;
       margin-left: var(--space-12);
       padding: var(--space-6) var(--space-8);
+    }
+
+    &__transition-label {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @include respond-to(desktop) {
+    &__earlier-career {
+      grid-template-columns: 0.55fr 0.8fr 1.65fr;
+    }
+
+    &__transition-label {
+      grid-column: auto;
     }
   }
 }

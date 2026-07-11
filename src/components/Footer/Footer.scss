@@ -53,6 +53,7 @@
       font-size: 0.9375rem;
       text-decoration: none;
       text-underline-offset: 0.2em;
+      overflow-wrap: anywhere;
 
       &:focus-visible {
         color: #ffffff;
@@ -86,15 +87,29 @@
 
   @include respond-to(tablet) {
     &__container {
-      grid-template-columns: minmax(14rem, 1fr) minmax(0, 1.2fr) auto;
+      grid-template-columns: minmax(14rem, 0.9fr) minmax(0, 1.1fr);
       align-items: start;
       padding-block: var(--space-8);
+    }
+
+    &__social {
+      grid-column: 2;
     }
 
     &__bottom {
       grid-column: 1 / -1;
       grid-template-columns: 1fr auto;
       align-items: center;
+    }
+  }
+
+  @include respond-to(desktop) {
+    &__container {
+      grid-template-columns: minmax(14rem, 1fr) minmax(0, 1.2fr) auto;
+    }
+
+    &__social {
+      grid-column: auto;
     }
   }
 }

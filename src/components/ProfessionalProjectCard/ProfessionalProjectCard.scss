@@ -50,6 +50,12 @@
     span:first-child {
       color: #aebcff;
     }
+
+    span:last-child {
+      min-width: 0;
+      overflow-wrap: anywhere;
+      text-align: right;
+    }
   }
 
   &__visual-canvas {
@@ -244,6 +250,24 @@
 
     &__overview {
       grid-template-columns: minmax(9rem, 0.7fr) minmax(0, 1.3fr);
+    }
+  }
+
+  @media (max-width: 47.9375rem) {
+    &__content {
+      padding: var(--space-6) var(--space-5);
+    }
+
+    &__visual {
+      min-height: 16rem;
+      padding: var(--space-5);
+    }
+
+    &__visual-canvas {
+      right: var(--space-5);
+      bottom: var(--space-5);
+      left: var(--space-5);
+      padding: var(--space-4);
     }
   }
 

@@ -205,6 +205,23 @@
     }
   }
 
+  @media (max-width: 47.9375rem) {
+    &__media {
+      min-height: 14rem;
+      padding: var(--space-3);
+
+      img {
+        min-height: 12rem;
+      }
+    }
+
+    &__links a {
+      flex: 1 1 11rem;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
   @include respond-to(desktop) {
     grid-template-columns: minmax(21rem, 0.9fr) minmax(0, 1.1fr);
 

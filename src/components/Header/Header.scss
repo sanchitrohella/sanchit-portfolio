@@ -174,7 +174,7 @@
       min-height: auto;
       flex-direction: row;
       align-items: center;
-      gap: var(--space-6);
+      gap: var(--space-4);
       padding: 0;
     }
 
@@ -186,7 +186,7 @@
 
     &__link {
       position: relative;
-      padding: var(--space-2) var(--space-3);
+      padding: var(--space-2);
       font-size: 0.875rem;
       font-weight: 500;
 
@@ -209,6 +209,16 @@
         transform: scaleX(1);
         transform-origin: left;
       }
+    }
+  }
+
+  @include respond-to(wide) {
+    &__navigation {
+      gap: var(--space-6);
+    }
+
+    &__link {
+      padding: var(--space-2) var(--space-3);
     }
   }
 }
