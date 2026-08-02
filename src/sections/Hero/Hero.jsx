@@ -1,8 +1,8 @@
-import Section from '../../components/Section/Section'
-import { socialLinks } from '../../data/socialLinks'
-import './Hero.scss'
+import Section from "../../components/Section/Section";
+import { socialLinks } from "../../data/socialLinks";
+import "./Hero.scss";
 
-const resumeUrl = '/documents/Sanchit_Kumar_ATS_Resume_Updated.pdf'
+const resumeUrl = "/documents/Sanchit_Kumar_ATS_Resume_Updated.pdf";
 
 function Hero() {
   return (
@@ -14,15 +14,14 @@ function Hero() {
         </p>
 
         <h1 id="hero-title">
-          Building polished, responsive, and{' '}
+          Building polished, responsive, and{" "}
           <span>business-focused web experiences.</span>
         </h1>
 
         <p className="hero-section__summary">
-          I am a React Frontend Developer with 3 years and 9 months of
-          experience building responsive web applications, integrating APIs,
-          independently owning frontend development, and communicating directly
-          with clients.
+          I am a React Frontend Developer with 4 years of experience building
+          responsive web applications, integrating APIs, independently owning
+          frontend development, and communicating directly with clients.
         </p>
 
         <p className="hero-section__availability">
@@ -31,7 +30,10 @@ function Hero() {
         </p>
 
         <div className="hero-section__actions">
-          <a className="hero-section__button hero-section__button--primary" href="#projects">
+          <a
+            className="hero-section__button hero-section__button--primary"
+            href="#projects"
+          >
             View My Work
           </a>
           <a
@@ -105,7 +107,7 @@ function Hero() {
         </div>
       </div>
     </Section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

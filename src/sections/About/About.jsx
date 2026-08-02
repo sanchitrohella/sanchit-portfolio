@@ -1,25 +1,25 @@
-import Section from '../../components/Section/Section'
-import './About.scss'
+import Section from "../../components/Section/Section";
+import "./About.scss";
 
-const credibilityChips = ['React UI', 'API-driven apps', 'Hyderabad / Remote']
+const credibilityChips = ["React UI", "API-driven apps", "Hyderabad / Remote"];
 
 const aboutInsights = [
   {
-    title: 'Frontend Ownership',
+    title: "Frontend Ownership",
     description:
-      'Building responsive React interfaces, reusable components, UI flows, and API-connected screens.',
+      "Building responsive React interfaces, reusable components, UI flows, and API-connected screens.",
   },
   {
-    title: 'Client-Facing Delivery',
+    title: "Client-Facing Delivery",
     description:
-      'Handling requirement discussions, issue updates, stakeholder coordination, and support communication.',
+      "Handling requirement discussions, issue updates, stakeholder coordination, and support communication.",
   },
   {
-    title: 'Full-Stack Understanding',
+    title: "Full-Stack Understanding",
     description:
-      'Practical Node.js and Express knowledge with an understanding of backend APIs, authentication flow, and product data flow.',
+      "Practical Node.js and Express knowledge with an understanding of backend APIs, authentication flow, and product data flow.",
   },
-]
+];
 
 function About() {
   return (
@@ -29,10 +29,10 @@ function About() {
           <p className="about__eyebrow">About</p>
           <h2 id="about-title">About Me</h2>
           <p>
-            I am a React Frontend Developer with 3 years and 9 months of
-            experience building responsive, API-driven web applications. I
-            focus on clean UI development, reusable components, practical
-            frontend architecture, and reliable user experiences.
+            I am a React Frontend Developer with 4 years of experience building
+            responsive, API-driven web applications. I focus on clean UI
+            development, reusable components, practical frontend architecture,
+            and reliable user experiences.
           </p>
           <p className="about__focus">
             Currently focused on React frontend roles in Hyderabad and remote
@@ -50,7 +50,7 @@ function About() {
           {aboutInsights.map((insight, index) => (
             <article className="about__insight" key={insight.title}>
               <span className="about__insight-number" aria-hidden="true">
-                {String(index + 1).padStart(2, '0')}
+                {String(index + 1).padStart(2, "0")}
               </span>
               <div>
                 <h3>{insight.title}</h3>
@@ -61,7 +61,7 @@ function About() {
         </div>
       </div>
     </Section>
-  )
+  );
 }
 
-export default About
+export default About;
